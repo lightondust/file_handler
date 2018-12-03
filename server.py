@@ -1,5 +1,6 @@
 import responder
 from service import get_file_list
+from CONST import PORT
 
 api = responder.API()
 
@@ -17,5 +18,4 @@ def file_list(req, resp, *, path):
     resp.media = file_res
     resp.headers['Access-Control-Allow-Origin'] = '*'
 
-
-api.run()
+api.run(port=PORT)
